@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bjhfc4cmucefk"]
+
+[ext_resource type="PackedScene" uid="uid://citk1p1e8ftd8" path="res://blocks/IslandWithFlower.tscn" id="1_ukiis"]
+[ext_resource type="PackedScene" uid="uid://btlpndr2q0j85" path="res://blocks/IslandWithFrog.tscn" id="2_7edgd"]
+[ext_resource type="PackedScene" uid="uid://d4cft82l6erdy" path="res://blocks/IslandSimple.tscn" id="3_rfipl"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4ykt6"]
+resource_name = "Main"
+scenes/1/scene = ExtResource("1_ukiis")
+scenes/2/scene = ExtResource("2_7edgd")
+scenes/3/scene = ExtResource("3_rfipl")
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetScenesCollectionSource_4ykt6")

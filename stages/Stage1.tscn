@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=4 uid="uid://5077tl75reb1"]
+
+[ext_resource type="PackedScene" uid="uid://dpsxnxorj2yf8" path="res://entities/PlayerDolphin.tscn" id="1_y5yu6"]
+[ext_resource type="TileSet" uid="uid://bjhfc4cmucefk" path="res://blocks/MainTileSet.tres" id="2_angxn"]
+[ext_resource type="PackedScene" uid="uid://vyuoqxeoymfu" path="res://entities/Crab.tscn" id="2_v4j2e"]
+[ext_resource type="PackedScene" uid="uid://cm85xthoykjsv" path="res://GameManager.tscn" id="4_7b8p5"]
+
+[node name="Stage1" type="Node2D"]
+texture_filter = 1
+
+[node name="Player" parent="." instance=ExtResource("1_y5yu6")]
+position = Vector2(107, 190)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAkAAQAAAAAAAwABAAkAAQAAAAAAAwACAAkAAQAAAAAAAQADAAkAAQAAAAAAAwAEAAkAAQAAAAAAAwAFAAkAAQAAAAAAAwAGAAkAAQAAAAAAAwAIAAkAAQAAAAAAAwAJAAkAAQAAAAAAAwAKAAkAAQAAAAAAAQALAAkAAQAAAAAAAwAMAAkAAQAAAAAAAwANAAkAAQAAAAAAAwAHAAkAAQAAAAAAAgAIAAQAAQAAAAAAAwAJAAUAAQAAAAAAAwAKAAUAAQAAAAAAAwALAAUAAQAAAAAAAwAMAAQAAQAAAAAAAwA=")
+tile_set = ExtResource("2_angxn")
+
+[node name="Crab" parent="." instance=ExtResource("2_v4j2e")]
+position = Vector2(271, 282)
+
+[node name="GameManager" parent="." instance=ExtResource("4_7b8p5")]

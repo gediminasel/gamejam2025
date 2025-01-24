@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://citk1p1e8ftd8"]
+
+[ext_resource type="Texture2D" uid="uid://c0y2h48gycglt" path="res://sprites/Island1.png" id="1_yc2lq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2gr"]
+size = Vector2(32, 11.125)
+
+[node name="WithFlower" type="Sprite2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_pg2gr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yc2lq")

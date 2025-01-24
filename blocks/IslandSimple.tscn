@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4cft82l6erdy"]
+
+[ext_resource type="Texture2D" uid="uid://b6e2p1wp81hyd" path="res://sprites/Island0.png" id="1_yddon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aijh"]
+size = Vector2(32, 11.125)
+
+[node name="Simple" type="Sprite2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1aijh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yddon")
