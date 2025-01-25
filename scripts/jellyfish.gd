@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const Speed = 150
+const Speed = 250
 
 var dead = false
 var dead_move_up = false

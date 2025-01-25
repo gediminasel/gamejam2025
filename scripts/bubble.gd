@@ -41,9 +41,15 @@ func _physics_process(delta: float) -> void:
 func _on_collision(object: Node2D) -> void:
 	if object.is_in_group("Player"):
 		return
+	if object.is_in_group("Air"):
+		queue_free()
 	if object.is_in_group(EnemiesGroup):
 		var hit_by_bubble = object.get_node_or_null("HitByBubble")
 		if hit_by_bubble is HitByBubble:
 			hit_by_bubble.on_hit.emit()
 	
+	queue_free()
+
+
+func _on_in_air_air_enter() -> void:
 	queue_free()

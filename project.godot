@@ -29,6 +29,7 @@ project/assembly_name="Gamejam2025"
 
 Enemies=""
 Player=""
+Air=""
 
 [input]
 

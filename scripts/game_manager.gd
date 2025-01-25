@@ -3,10 +3,10 @@ class_name GameManager
 
 const TileSize = 32
 
-var levelSize = Vector2(20, 24)
+@export var cornerMarker: Node2D;
 
 func level_size_in_pixels() -> Vector2:
-	return TileSize * levelSize
+	return cornerMarker.position
 
 # only available after _ready!
-var player: Node2D = null;
+var player: Player = null;

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://vdmg10k8vbsu"]
+
+[ext_resource type="Script" path="res://scripts/level_ui.gd" id="1_1kgbv"]
+[ext_resource type="Texture2D" uid="uid://c76gaqpfgo75s" path="res://sprites/Bubble.png" id="1_lj6ei"]
+[ext_resource type="StyleBox" uid="uid://cl4ncv5sik70o" path="res://ui/AirBarNormal.tres" id="2_vjspd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4mbc"]
+bg_color = Color(0, 0, 0, 0.172549)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_right = 3.0
+
+[node name="LevelUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1kgbv")
+
+[node name="AirBar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bar" type="ProgressBar" parent="AirBar"]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 6.0
+offset_right = 102.0
+offset_bottom = 20.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w4mbc")
+theme_override_styles/fill = ExtResource("2_vjspd")
+max_value = 1.0
+step = 0.0
+value = 0.01
+show_percentage = false
+
+[node name="Bubble" type="TextureRect" parent="AirBar"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 25.0
+offset_bottom = 21.0
+texture = ExtResource("1_lj6ei")

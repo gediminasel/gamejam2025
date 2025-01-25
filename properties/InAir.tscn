@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dajjefg4knsgy"]
+
+[ext_resource type="Script" path="res://scripts/in_air.gd" id="1_jxgel"]
+
+[node name="InAir" type="Node"]
+script = ExtResource("1_jxgel")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpsxnxorj2yf8"]
+[gd_scene load_steps=7 format=3 uid="uid://dpsxnxorj2yf8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0emko"]
 [ext_resource type="Texture2D" uid="uid://82wkqdud6bxo" path="res://sprites/Dolphin.png" id="1_sedqg"]
 [ext_resource type="Texture2D" uid="uid://d4b67krak4ia4" path="res://sprites/DolphinTail.png" id="3_uobd2"]
+[ext_resource type="PackedScene" uid="uid://dajjefg4knsgy" path="res://properties/InAir.tscn" id="4_x32ra"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8ob8o"]
 animations = [{
@@ -41,3 +42,8 @@ sprite_frames = SubResource("SpriteFrames_8ob8o")
 position = Vector2(-3, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_06dvi")
+
+[node name="InAir" parent="." instance=ExtResource("4_x32ra")]
+
+[connection signal="air_enter" from="InAir" to="." method="on_air_enter"]
+[connection signal="air_exit" from="InAir" to="." method="on_air_exit"]
