@@ -6,6 +6,7 @@ const Acceleration = 300.0
 const Friction = 0.3
 const FrictionThreshold = 30.0
 const FRICTION_DELTA = 100.0
+const FRICTION_GROUND_DELTA = 200.0
 
 const MaxAir = 10
 const AirToShoot = 1
@@ -87,6 +88,8 @@ func move_to(direction: Vector2, delta: float):
 	if direction != Vector2.ZERO:
 		velocity += direction.normalized() * Acceleration * delta
 		velocity = velocity.limit_length(MaxVelocity)
+	elif on_ground:
+		velocity = velocity.limit_length(max(0, velocity.length() - FRICTION_GROUND_DELTA * delta))
 	elif velocity.length() > FrictionThreshold:
 		velocity *= pow(Friction, delta)
 	else:
