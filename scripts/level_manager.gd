@@ -6,6 +6,10 @@ const TileSize = 32
 @onready var player: Player = get_parent().get_node("Player")
 @onready var cornerMarker: Marker2D = get_parent().get_node("CornerMarker")
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("restart"):
+		GameManager.instance(self).retry()
+
 static func instance(obj: Node) -> LevelManager:
 	return obj.get_tree().current_scene.get_node("LevelManager") as LevelManager
 

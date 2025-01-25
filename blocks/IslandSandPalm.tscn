@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4cft82l6erdy"]
+[gd_scene load_steps=3 format=3 uid="uid://cpfpqonffm48b"]
 
-[ext_resource type="Texture2D" uid="uid://bkmgm535jwnlp" path="res://sprites/Islands.png" id="1_100w8"]
+[ext_resource type="Texture2D" uid="uid://bkmgm535jwnlp" path="res://sprites/Islands.png" id="1_4oibw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aijh"]
-size = Vector2(32, 8)
+size = Vector2(32, 6)
 
 [node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
 
@@ -12,6 +12,6 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_1aijh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_100w8")
+texture = ExtResource("1_4oibw")
 region_enabled = true
-region_rect = Rect2(96, 0, 32, 32)
+region_rect = Rect2(64, 0, 32, 32)

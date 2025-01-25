@@ -7,12 +7,11 @@ var velocity = Vector2(0, 0)
 var direction = Vector2(1, 1)
 
 func _physics_process(delta):
-	var input = get_input()
-	move_to(input, delta)
+	move_to(get_input(), delta)
 	position += velocity * delta
 
-func move_to(direction: Vector2, delta: float):
-	velocity += direction.normalized() * Acceleration * delta
+func move_to(input: Vector2, delta: float):
+	velocity += input.normalized() * Acceleration * delta
 	velocity = velocity.limit_length(MaxVelocity)
 
 	if velocity.x > 0:

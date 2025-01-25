@@ -26,6 +26,7 @@ const BubbleAdditionalSpeed = 50
 var is_dead = false
 
 var air = 10
+var on_ground = false
 	
 func _input(event):
 	if is_dead:
@@ -40,19 +41,26 @@ func _physics_process(delta):
 	
 	var input = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if in_air.in_air:
-		input = Vector2(0, 1)
+		if on_ground:
+			input = Vector2(0, 0)
+		else:
+			input = Vector2(0, 1)
 	move_to(input, delta)
 	move_and_slide()
 	
 	clamp_position()
 	
+	on_ground = false
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider is Node:
 			if collider.is_in_group(EnemiesGroup):
 				die()
-	
+			if collider.is_in_group("Ground"):
+				if in_air.in_air:
+					on_ground = true
+
 	if air <= 0:
 		die()
 		return

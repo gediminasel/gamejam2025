@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://svd71vmlkxfp" path="res://entities/AirBubble.tscn" id="10_l5u1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76o4n"]
-size = Vector2(1291, 218)
+size = Vector2(1291, 222)
 
 [node name="Stage1" type="Node2D"]
 texture_filter = 1
@@ -39,7 +39,8 @@ region_enabled = true
 region_rect = Rect2(0, 220, 1280, 500)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAkAAQAAAAAAAwABAAkAAQAAAAAAAwACAAkAAQAAAAAAAQADAAkAAQAAAAAAAwAEAAkAAQAAAAAAAwAFAAkAAQAAAAAAAwAGAAkAAQAAAAAAAwAIAAkAAQAAAAAAAwAJAAkAAQAAAAAAAwAKAAkAAQAAAAAAAQALAAkAAQAAAAAAAwAHAAkAAQAAAAAAAgAGAA0AAQAAAAAAAwAHAA4AAQAAAAAAAwAIAA4AAQAAAAAAAwAJAA4AAQAAAAAAAwAKAA0AAQAAAAAAAwA=")
+position = Vector2(0, -7)
+tile_map_data = PackedByteArray("AAAAAAkAAQAAAAAAAwABAAkAAQAAAAAAAwACAAkAAQAAAAAAAQADAAkAAQAAAAAAAwAEAAkAAQAAAAAAAwAFAAkAAQAAAAAAAwAGAAkAAQAAAAAAAwAIAAkAAQAAAAAAAwAJAAkAAQAAAAAAAwAKAAkAAQAAAAAAAQALAAkAAQAAAAAAAwAHAAkAAQAAAAAAAgAGAA0AAQAAAAAAAwAHAA4AAQAAAAAAAwAIAA4AAQAAAAAAAwAJAA4AAQAAAAAAAwAKAA0AAQAAAAAAAwAQAAcAAQAAAAAABAAQAAgAAQAAAAAABAARAAgAAQAAAAAABAARAAcAAQAAAAAABAASAAcAAQAAAAAABQA=")
 tile_set = ExtResource("2_angxn")
 
 [node name="Node2D" type="Node2D" parent="TileMapLayer"]
@@ -71,7 +72,7 @@ script = ExtResource("6_j6trf")
 script = ExtResource("8_0ou27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Air"]
-position = Vector2(640.5, 102)
+position = Vector2(640.5, 104)
 shape = SubResource("RectangleShape2D_76o4n")
 
 [node name="CornerMarker" type="Marker2D" parent="."]

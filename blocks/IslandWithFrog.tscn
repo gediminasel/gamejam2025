@@ -3,16 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://fkytp0sk706s" path="res://sprites/Island2.png" id="1_eu6rn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b8bw"]
-size = Vector2(32, 11.125)
+size = Vector2(32, 8)
 
-[node name="WithFrog" type="Sprite2D"]
+[node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_6b8bw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, 3)
 texture = ExtResource("1_eu6rn")

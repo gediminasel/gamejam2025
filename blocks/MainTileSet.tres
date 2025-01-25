@@ -1,14 +1,26 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bjhfc4cmucefk"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://bjhfc4cmucefk"]
 
 [ext_resource type="PackedScene" uid="uid://citk1p1e8ftd8" path="res://blocks/IslandWithFlower.tscn" id="1_ukiis"]
 [ext_resource type="PackedScene" uid="uid://btlpndr2q0j85" path="res://blocks/IslandWithFrog.tscn" id="2_7edgd"]
 [ext_resource type="PackedScene" uid="uid://d4cft82l6erdy" path="res://blocks/IslandThin.tscn" id="3_otgi2"]
+[ext_resource type="PackedScene" uid="uid://cdfp3xcmwiyco" path="res://blocks/IslandDirtBlock.tscn" id="4_1ly7a"]
+[ext_resource type="PackedScene" uid="uid://dchvff00lt0ge" path="res://blocks/IslandDirtThick.tscn" id="5_nomyw"]
+[ext_resource type="PackedScene" uid="uid://dsfbibbwdp2rq" path="res://blocks/IslandDirtThin.tscn" id="6_flruq"]
+[ext_resource type="PackedScene" uid="uid://cmutcitbvqpla" path="res://blocks/IslandSand.tscn" id="7_fo4gy"]
+[ext_resource type="PackedScene" uid="uid://cpfpqonffm48b" path="res://blocks/IslandSandPalm.tscn" id="8_tdvru"]
+[ext_resource type="PackedScene" uid="uid://ug5g55njtqmd" path="res://blocks/IslandThick.tscn" id="9_nqpp7"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4ykt6"]
 resource_name = "Main"
 scenes/1/scene = ExtResource("1_ukiis")
 scenes/2/scene = ExtResource("2_7edgd")
 scenes/3/scene = ExtResource("3_otgi2")
+scenes/4/scene = ExtResource("4_1ly7a")
+scenes/5/scene = ExtResource("5_nomyw")
+scenes/6/scene = ExtResource("6_flruq")
+scenes/7/scene = ExtResource("7_fo4gy")
+scenes/8/scene = ExtResource("8_tdvru")
+scenes/9/scene = ExtResource("9_nqpp7")
 
 [resource]
 tile_size = Vector2i(32, 32)
