@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxtqvpj4lvf47"]
+
+[ext_resource type="Script" path="res://scripts/jellyfish.gd" id="1_0vr8w"]
+[ext_resource type="Texture2D" uid="uid://dhwshvntkx12c" path="res://sprites/Jellyfish.png" id="1_bg27p"]
+[ext_resource type="PackedScene" uid="uid://don1orbei0a7c" path="res://properties/HitByBubble.tscn" id="3_pemt6"]
+[ext_resource type="Texture2D" uid="uid://bpxflduhwumlr" path="res://sprites/JellyfishAnimation.png" id="3_yi8he"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v1qv"]
+atlas = ExtResource("3_yi8he")
+region = Rect2(0, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj303"]
+atlas = ExtResource("3_yi8he")
+region = Rect2(34, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s73j"]
+atlas = ExtResource("3_yi8he")
+region = Rect2(68, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbcbu"]
+atlas = ExtResource("3_yi8he")
+region = Rect2(102, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1p0l"]
+atlas = ExtResource("3_yi8he")
+region = Rect2(136, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihlnv"]
+atlas = ExtResource("3_yi8he")
+region = Rect2(170, 0, 34, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlpop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v1qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj303")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s73j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbcbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1p0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihlnv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tv2m7"]
+radius = 8.0
+height = 20.0
+
+[node name="Jellyfish" type="CharacterBody2D" groups=["Enemies"]]
+script = ExtResource("1_0vr8w")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Normal" type="Sprite2D" parent="Sprites" groups=["Enemies"]]
+position = Vector2(0, 8)
+texture = ExtResource("1_bg27p")
+
+[node name="Dead" type="AnimatedSprite2D" parent="Sprites"]
+visible = false
+position = Vector2(1, 7)
+sprite_frames = SubResource("SpriteFrames_hlpop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_tv2m7")
+
+[node name="HitByBubble" parent="." instance=ExtResource("3_pemt6")]
+
+[connection signal="animation_finished" from="Sprites/Dead" to="." method="_on_dead_animation_finished"]
+[connection signal="on_hit" from="HitByBubble" to="." method="die"]

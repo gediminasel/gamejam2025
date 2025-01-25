@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://cahwgmr8jgw1x"]
+
+[ext_resource type="Texture2D" uid="uid://c0hwaolq1rnpr" path="res://sprites/BubbleRingLight.png" id="1_2vutr"]
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_ne4id"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quifh"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khd0f"]
+size = Vector2(5, 5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttmok"]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ucogd"]
+radius = 3.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kknt"]
+radius = 6.0
+height = 32.0
+
+[node name="Bubble" type="Node2D"]
+script = ExtResource("1_ne4id")
+
+[node name="States" type="Node2D" parent="."]
+
+[node name="State0" type="Area2D" parent="States"]
+
+[node name="Sprite2D" type="Sprite2D" parent="States/State0"]
+position = Vector2(0, -1)
+texture = ExtResource("1_2vutr")
+region_enabled = true
+region_rect = Rect2(0, 0, 14, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="States/State0"]
+shape = SubResource("RectangleShape2D_quifh")
+
+[node name="State1" type="Area2D" parent="States"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="States/State1"]
+position = Vector2(0, -1)
+texture = ExtResource("1_2vutr")
+region_enabled = true
+region_rect = Rect2(14, 0, 14, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="States/State1"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_khd0f")
+
+[node name="State2" type="Area2D" parent="States"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="States/State2"]
+position = Vector2(0, -1)
+texture = ExtResource("1_2vutr")
+region_enabled = true
+region_rect = Rect2(28, 0, 14, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="States/State2"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_ttmok")
+
+[node name="State3" type="Area2D" parent="States"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="States/State3"]
+texture = ExtResource("1_2vutr")
+region_enabled = true
+region_rect = Rect2(42, 0, 14, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="States/State3"]
+shape = SubResource("CapsuleShape2D_ucogd")
+
+[node name="State4" type="Area2D" parent="States"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="States/State4"]
+texture = ExtResource("1_2vutr")
+region_enabled = true
+region_rect = Rect2(56, 0, 14, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="States/State4"]
+shape = SubResource("CapsuleShape2D_0kknt")
+
+[connection signal="body_entered" from="States/State0" to="." method="_on_collision"]
+[connection signal="body_entered" from="States/State1" to="." method="_on_collision"]
+[connection signal="body_entered" from="States/State2" to="." method="_on_collision"]
+[connection signal="body_entered" from="States/State3" to="." method="_on_collision"]
+[connection signal="body_entered" from="States/State4" to="." method="_on_collision"]

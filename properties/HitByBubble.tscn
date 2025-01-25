@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://don1orbei0a7c"]
+
+[ext_resource type="Script" path="res://scripts/hit_by_bubble.gd" id="1_yxvum"]
+
+[node name="HitByBubble" type="Node"]
+script = ExtResource("1_yxvum")
