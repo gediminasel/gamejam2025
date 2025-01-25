@@ -23,3 +23,5 @@ func _on_area_exited(area: Area2D) -> void:
 	var in_air = area.get_node_or_null("InAir")
 	if in_air is InAir:
 		in_air.air_area_count -= 1
+		
+	# check distance

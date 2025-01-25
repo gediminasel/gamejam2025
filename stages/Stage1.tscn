@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://5077tl75reb1"]
+[gd_scene load_steps=12 format=4 uid="uid://5077tl75reb1"]
 
 [ext_resource type="PackedScene" uid="uid://dpsxnxorj2yf8" path="res://entities/PlayerDolphin.tscn" id="1_y5yu6"]
 [ext_resource type="TileSet" uid="uid://bjhfc4cmucefk" path="res://blocks/MainTileSet.tres" id="2_angxn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://do3e4eqitaxdo" path="res://sprites/BackgroundSunset.png" id="7_nmjrc"]
 [ext_resource type="Script" path="res://scripts/air.gd" id="8_0ou27"]
 [ext_resource type="PackedScene" uid="uid://vdmg10k8vbsu" path="res://ui/LevelUI.tscn" id="8_ns8td"]
+[ext_resource type="PackedScene" uid="uid://svd71vmlkxfp" path="res://entities/AirBubble.tscn" id="10_l5u1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76o4n"]
 size = Vector2(1291, 218)
@@ -41,6 +42,11 @@ cornerMarker = NodePath("../CornerMarker")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAkAAQAAAAAAAwABAAkAAQAAAAAAAwACAAkAAQAAAAAAAQADAAkAAQAAAAAAAwAEAAkAAQAAAAAAAwAFAAkAAQAAAAAAAwAGAAkAAQAAAAAAAwAIAAkAAQAAAAAAAwAJAAkAAQAAAAAAAwAKAAkAAQAAAAAAAQALAAkAAQAAAAAAAwAHAAkAAQAAAAAAAgAGAA0AAQAAAAAAAwAHAA4AAQAAAAAAAwAIAA4AAQAAAAAAAwAJAA4AAQAAAAAAAwAKAA0AAQAAAAAAAwA=")
 tile_set = ExtResource("2_angxn")
+
+[node name="Node2D" type="Node2D" parent="TileMapLayer"]
+
+[node name="AirBubble" parent="." instance=ExtResource("10_l5u1s")]
+position = Vector2(399, 392)
 
 [node name="Player" parent="." instance=ExtResource("1_y5yu6")]
 position = Vector2(124, 264)

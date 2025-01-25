@@ -10,11 +10,11 @@ const FRICTION_DELTA = 100.0
 const MaxAir = 10
 const AirToShoot = 1
 const AirUsageSpeed = 0.2
-const AirBreathSpeed = 1
+const AirBreathSpeed = 2
 
 const EnemiesGroup = "Enemies"
 
-static var BubbleScene := preload("res://entities/Bubble.tscn")
+static var BubbleScene := preload("res://entities/BubbleRing.tscn")
 const BubbleShootOffset = Vector2(15, 0)  # offset to mouth
 const BubbleAdditionalSpeed = 50
 
@@ -24,7 +24,6 @@ const BubbleAdditionalSpeed = 50
 @onready var animation: AnimatedSprite2D = $Sprites/AnimatedDolphin
 @onready var in_air = $InAir as InAir
 var is_dead = false
-var last_non_zero_velocity = Vector2(1, 0)
 
 var air = 10
 
@@ -47,9 +46,6 @@ func _physics_process(delta):
 		input = Vector2(0, 1)
 	move_to(input, delta)
 	move_and_slide()
-	
-	if velocity != Vector2.ZERO:
-		last_non_zero_velocity = velocity
 	
 	clamp_position()
 	
@@ -117,7 +113,10 @@ func shoot():
 		return
 	air -= AirToShoot
 	var new_bubble = BubbleScene.instantiate() as Bubble
-	new_bubble.velocity = last_non_zero_velocity.normalized() * (velocity.length() + BubbleAdditionalSpeed)
+	var direction = velocity
+	if direction == Vector2.ZERO:
+		direction = Vector2(1, 0) if sprite.scale.x > 0 else Vector2(-1, 0)
+	new_bubble.velocity = direction.normalized() * (velocity.length() + BubbleAdditionalSpeed)
 	var bubble_position = position
 	if sprite.scale.x > 0:
 		bubble_position += BubbleShootOffset
@@ -128,8 +127,14 @@ func shoot():
 
 func on_air_enter():
 	const min_vel = 40
-	if velocity != Vector2.ZERO and velocity.length() < min_vel:
-		velocity *= min_vel / velocity.length()
+	if velocity.length() < min_vel:
+		if velocity == Vector2.ZERO:
+			velocity = Vector2(0, -min_vel)
+		else:
+			velocity *= min_vel / velocity.length()
 
 func on_air_exit():
 	velocity = velocity.limit_length(0.5 * velocity.length())
+	
+func air_bubble_collected():
+	air = min(air + AirToShoot, MaxAir)
