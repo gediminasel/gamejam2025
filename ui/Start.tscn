@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://kt3i4cw51iwj"]
+
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_4bd3b"]
+[ext_resource type="Texture2D" uid="uid://uaj570hr3ox3" path="res://sprites/BackgroundClouds.png" id="1_nanhx"]
+
+[node name="StartUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4bd3b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nanhx")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.36
+anchor_right = 0.5
+anchor_bottom = 0.36
+offset_left = -107.5
+offset_top = -24.6
+offset_right = 107.5
+offset_bottom = 24.4
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.201039, 0.709788, 1)
+theme_override_font_sizes/font_size = 35
+text = "Pink Dolphin"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.383
+anchor_top = 0.525
+anchor_right = 0.617
+anchor_bottom = 0.611
+offset_left = -0.12001
+offset_top = -1.52588e-05
+offset_right = 0.119965
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

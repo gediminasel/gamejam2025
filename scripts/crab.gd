@@ -6,7 +6,7 @@ const Distance = 80.0
 @onready var normal_sprite: Sprite2D = $Sprites/Normal
 @onready var angry_sprite: Sprite2D = $Sprites/Angry
 
-@onready var game_manager = get_tree().current_scene.get_node("GameManager") as GameManager
+@onready var manager = LevelManager.instance(self)
 var dead = false
 var dead_timer = 3
 
@@ -24,7 +24,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	var direction = game_manager.player.position - position
+	var player = manager.player
+	var direction = player.position - position if player and not player.is_dead else Vector2(1000000, 1000000)
 	var is_close = direction.length() < Distance
 
 	if is_close:

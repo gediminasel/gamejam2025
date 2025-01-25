@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo3scs7dx88wb"]
+
+[ext_resource type="Texture2D" uid="uid://82wkqdud6bxo" path="res://sprites/Dolphin.png" id="1_66wls"]
+[ext_resource type="Texture2D" uid="uid://d4b67krak4ia4" path="res://sprites/DolphinTail.png" id="2_61jrm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ob8o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_66wls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_61jrm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="AnimatedDolphin" type="AnimatedSprite2D"]
+position = Vector2(-11, 5)
+sprite_frames = SubResource("SpriteFrames_8ob8o")

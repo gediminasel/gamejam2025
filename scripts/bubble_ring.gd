@@ -46,7 +46,7 @@ func _on_collision(object: Node2D) -> void:
 	if object.is_in_group(EnemiesGroup):
 		var hit_by_bubble = object.get_node_or_null("HitByBubble")
 		if hit_by_bubble is HitByBubble:
-			hit_by_bubble.on_hit.emit()
+			hit_by_bubble.hit()
 	
 	queue_free()
 

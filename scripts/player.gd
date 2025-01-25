@@ -18,7 +18,7 @@ static var BubbleScene := preload("res://entities/BubbleRing.tscn")
 const BubbleShootOffset = Vector2(15, 0)  # offset to mouth
 const BubbleAdditionalSpeed = 50
 
-@onready var game_manager = get_tree().current_scene.get_node("GameManager") as GameManager
+@onready var manager = LevelManager.instance(self)
 
 @onready var sprite: Node2D = $Sprites
 @onready var animation: AnimatedSprite2D = $Sprites/AnimatedDolphin
@@ -26,9 +26,6 @@ const BubbleAdditionalSpeed = 50
 var is_dead = false
 
 var air = 10
-
-func _ready():
-	game_manager.player = self
 	
 func _input(event):
 	if is_dead:
@@ -56,7 +53,7 @@ func _physics_process(delta):
 			if collider.is_in_group(EnemiesGroup):
 				die()
 	
-	if air < 0:
+	if air <= 0:
 		die()
 		return
 	if in_air.in_air:
@@ -69,8 +66,11 @@ func _process_dead_animation(delta: float) -> void:
 	animation.frame = 0
 	if position.y < -50:
 		velocity = Vector2.ZERO
+		manager.on_finish(false)
+		queue_free()
 		return
 	sprite.scale.y = -1
+	velocity.x = 0
 	velocity += Vector2(0, -1) * Acceleration * delta
 	velocity = velocity.limit_length(MaxVelocity)
 	move_and_slide()
@@ -95,7 +95,7 @@ func move_to(direction: Vector2, delta: float):
 		animation.pause()
 
 func clamp_position():
-	var max_pos = game_manager.level_size_in_pixels()
+	var max_pos = manager.level_size_in_pixels()
 	position = position.clamp(Vector2.ZERO, max_pos)
 	velocity.x = max(0, velocity.x) if position.x == 0 else velocity.x
 	velocity.y = max(0, velocity.y) if position.y == 0 else velocity.y

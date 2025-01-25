@@ -3,13 +3,13 @@ extends Control
 static var AirBarNormal := preload("res://ui/AirBarNormal.tres")
 static var AirBarLow := preload("res://ui/AirBarLow.tres")
 
-@onready var game_manager = get_tree().current_scene.get_node("GameManager") as GameManager
+@onready var manager = LevelManager.instance(self)
 @onready var air_bar = $AirBar/Bar
 var air_bar_low = false
 
 func _process(_delta: float) -> void:
-	var player = game_manager.player;
-	if player.is_dead:
+	var player = manager.player;
+	if not player or player.is_dead:
 		return
 	_update_air_bar(player.air / player.MaxAir)
 

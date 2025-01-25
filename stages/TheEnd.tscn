@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c485kwnmhwr5y"]
+
+[ext_resource type="Script" path="res://scripts/the_end_dolphin.gd" id="1_pa6lg"]
+[ext_resource type="PackedScene" uid="uid://bo3scs7dx88wb" path="res://animations/AnimatedDolphin.tscn" id="1_pgc6o"]
+[ext_resource type="PackedScene" uid="uid://du71ppu7tffne" path="res://ui/TheEnd.tscn" id="1_s38uf"]
+
+[node name="TheEnd" type="Node2D"]
+
+[node name="Dolphin" type="Node2D" parent="."]
+position = Vector2(109, 152)
+script = ExtResource("1_pa6lg")
+
+[node name="AnimatedDolphin" parent="Dolphin" instance=ExtResource("1_pgc6o")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="EndUI" parent="CanvasLayer" instance=ExtResource("1_s38uf")]

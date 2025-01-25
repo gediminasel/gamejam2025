@@ -1,23 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpsxnxorj2yf8"]
+[gd_scene load_steps=6 format=3 uid="uid://dpsxnxorj2yf8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0emko"]
 [ext_resource type="Texture2D" uid="uid://82wkqdud6bxo" path="res://sprites/Dolphin.png" id="1_sedqg"]
-[ext_resource type="Texture2D" uid="uid://d4b67krak4ia4" path="res://sprites/DolphinTail.png" id="3_uobd2"]
+[ext_resource type="PackedScene" uid="uid://bo3scs7dx88wb" path="res://animations/AnimatedDolphin.tscn" id="3_88kh3"]
 [ext_resource type="PackedScene" uid="uid://dajjefg4knsgy" path="res://properties/InAir.tscn" id="4_x32ra"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ob8o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sedqg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_uobd2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06dvi"]
 radius = 6.0
@@ -34,9 +20,7 @@ texture_filter = 1
 position = Vector2(-11, 5)
 texture = ExtResource("1_sedqg")
 
-[node name="AnimatedDolphin" type="AnimatedSprite2D" parent="Sprites"]
-position = Vector2(-11, 5)
-sprite_frames = SubResource("SpriteFrames_8ob8o")
+[node name="AnimatedDolphin" parent="Sprites" instance=ExtResource("3_88kh3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 0)
