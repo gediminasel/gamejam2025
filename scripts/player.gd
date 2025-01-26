@@ -67,8 +67,10 @@ func _physics_process(delta):
 			if collider.is_in_group("Ground"):
 				if in_air.in_air:
 					on_ground = true
-
-	if air <= 0 and manager:
+	
+	if is_win:
+		return
+	if air <= 0:
 		die()
 		return
 	if in_air.in_air:
@@ -124,7 +126,8 @@ func die():
 		return
 	is_dead = true
 	$CollisionShape2D.disabled = true
-	manager.on_finish(false)
+	if manager:
+		manager.on_finish(false)
 
 func win():
 	if is_dead or is_win:
