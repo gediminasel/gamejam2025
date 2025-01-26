@@ -6,6 +6,7 @@ static var Start = preload("res://ui/Start.tscn")
 static var TheEnd = preload("res://stages/TheEnd.tscn")
 static var Levels: Array[Resource] = [
 	preload("res://stages/Stage1.tscn"),
+	preload("res://stages/Stage2.tscn"),
 ]
 
 var level = -1

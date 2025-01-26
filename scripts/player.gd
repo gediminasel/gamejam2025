@@ -48,6 +48,7 @@ func _physics_process(delta):
 			input = Vector2(0, 1)
 	move_to(input, delta)
 	move_and_slide()
+	velocity = get_real_velocity()
 	
 	clamp_position()
 	
@@ -70,6 +71,7 @@ func _physics_process(delta):
 		air = min(air + delta * AirBreathSpeed, MaxAir)
 	else:
 		air = max(0, air - delta * AirUsageSpeed)
+
 
 func _process_dead_animation(delta: float) -> void:
 	animation.pause()
@@ -96,9 +98,9 @@ func move_to(direction: Vector2, delta: float):
 	else:
 		velocity = velocity.limit_length(max(0, velocity.length() - FRICTION_DELTA * delta))
 
-	if velocity.x > 0:
+	if direction.x > 0 and velocity.x > 0.1:
 		sprite.scale.x = 1
-	elif velocity.x < 0:
+	elif direction.x < 0 and velocity.x < 0.1:
 		sprite.scale.x = -1
 
 	if velocity.length() > 0:

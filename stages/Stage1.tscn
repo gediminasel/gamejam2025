@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://5077tl75reb1"]
 
-[ext_resource type="PackedScene" path="res://LevelManager.tscn" id="1_mbnlw"]
+[ext_resource type="PackedScene" uid="uid://1bnea7nnpcxj" path="res://LevelManager.tscn" id="1_mbnlw"]
 [ext_resource type="PackedScene" uid="uid://dpsxnxorj2yf8" path="res://entities/PlayerDolphin.tscn" id="1_y5yu6"]
 [ext_resource type="TileSet" uid="uid://bjhfc4cmucefk" path="res://blocks/MainTileSet.tres" id="2_angxn"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="6_j6trf"]
@@ -73,13 +73,6 @@ offset_bottom = 361.0
 [node name="FinishRing" parent="." instance=ExtResource("11_5rkfy")]
 position = Vector2(1209, 192)
 
-[connection signal="body_entered" from="TileMapLayer/AirBubble" to="TileMapLayer/AirBubble" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@17848" to="TileMapLayer/@Area2D@17848" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@18928" to="TileMapLayer/@Area2D@18928" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@18929" to="TileMapLayer/@Area2D@18929" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@18930" to="TileMapLayer/@Area2D@18930" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@18992" to="TileMapLayer/@Area2D@18992" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@18993" to="TileMapLayer/@Area2D@18993" method="_on_body_entered"]
 [connection signal="area_entered" from="Air" to="Air" method="_on_area_entered"]
 [connection signal="area_exited" from="Air" to="Air" method="_on_area_exited"]
 [connection signal="body_entered" from="Air" to="Air" method="_on_body_entered"]

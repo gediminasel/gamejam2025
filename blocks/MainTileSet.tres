@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://vyuoqxeoymfu" path="res://entities/Crab.tscn" id="21_pfhtc"]
 [ext_resource type="PackedScene" uid="uid://dxelevh74cr4b" path="res://entities/AirBubble.tscn" id="22_8p5tj"]
 [ext_resource type="PackedScene" uid="uid://cvhu8v0hr0p3d" path="res://blocks/IslandGrass0.tscn" id="23_ad6p6"]
-[ext_resource type="PackedScene" path="res://entities/Jellyfish.tscn" id="23_tnlom"]
+[ext_resource type="PackedScene" uid="uid://cxtqvpj4lvf47" path="res://entities/Jellyfish.tscn" id="23_tnlom"]
 [ext_resource type="PackedScene" uid="uid://d4cft82l6erdy" path="res://blocks/IslandGrass1.tscn" id="24_ksm5h"]
 [ext_resource type="PackedScene" uid="uid://clvx7aoswqqrc" path="res://blocks/IslandGrass2.tscn" id="25_nak7t"]
 [ext_resource type="PackedScene" uid="uid://c4thjeiiji720" path="res://blocks/IslandGrass3.tscn" id="26_3805x"]

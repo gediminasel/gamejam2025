@@ -10,4 +10,5 @@ tile_map_data = PackedByteArray("AAACAAIAAQAAAAAADgADAAIAAQAAAAAADwAEAAIAAQAAAAA
 tile_set = ExtResource("1_6l6oi")
 
 [node name="Player" parent="." instance=ExtResource("2_r4faf")]
-position = Vector2(32, 148)
+position = Vector2(8.607, 3.17611)
+floor_block_on_wall = true
