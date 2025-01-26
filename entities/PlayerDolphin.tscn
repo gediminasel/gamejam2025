@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06dvi"]
 radius = 6.0
-height = 36.0
+height = 30.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_0emko")
@@ -23,7 +23,6 @@ texture = ExtResource("1_sedqg")
 [node name="AnimatedDolphin" parent="Sprites" instance=ExtResource("3_88kh3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_06dvi")
 

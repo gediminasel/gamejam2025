@@ -62,7 +62,7 @@ func _physics_process(delta):
 				if in_air.in_air:
 					on_ground = true
 
-	if air <= 0:
+	if air <= 0 and manager:
 		die()
 		return
 	if in_air.in_air:
