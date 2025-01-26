@@ -40,6 +40,14 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, 0.0, Speed * delta)
 
 	move_and_slide()
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider is Node:
+			if collider.is_in_group("Player"):
+				if collider is Player:
+					collider.die()
+					return
 
 func die():
 	dead = true

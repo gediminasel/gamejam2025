@@ -58,6 +58,7 @@ func _physics_process(delta):
 		if collider is Node:
 			if collider.is_in_group(EnemiesGroup):
 				die()
+				return
 			if collider.is_in_group("Ground"):
 				if in_air.in_air:
 					on_ground = true
@@ -114,6 +115,8 @@ func clamp_position():
 	velocity.y = min(0, velocity.y) if position.y == max_pos.y else velocity.y
 
 func die():
+	if is_dead:
+		return
 	is_dead = true
 	$CollisionShape2D.disabled = true
 
