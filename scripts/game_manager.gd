@@ -40,3 +40,12 @@ func next_level():
 		get_tree().call_deferred("change_scene_to_packed", Levels[level])
 	else:
 		get_tree().call_deferred("change_scene_to_packed", TheEnd)
+
+func prev_level():
+	if level < 0:
+		return
+	level -= 1
+	if level == -1:
+		call_deferred("start_menu")
+	else:
+		get_tree().call_deferred("change_scene_to_packed", Levels[level])

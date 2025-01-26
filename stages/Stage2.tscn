@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://bt0t88borgapl"]
+[gd_scene load_steps=10 format=4 uid="uid://dn0dgr1ay2xhj"]
 
-[ext_resource type="PackedScene" path="res://LevelManager.tscn" id="1_kgjrm"]
+[ext_resource type="PackedScene" uid="uid://bc5c50q6nx525" path="res://LevelManager.tscn" id="1_kgjrm"]
 [ext_resource type="Texture2D" uid="uid://cxyirwgcq2tr5" path="res://sprites/BackgroundNight.png" id="2_2iaht"]
 [ext_resource type="TileSet" uid="uid://bjhfc4cmucefk" path="res://blocks/MainTileSet.tres" id="3_d2rq1"]
 [ext_resource type="PackedScene" uid="uid://dpsxnxorj2yf8" path="res://entities/PlayerDolphin.tscn" id="4_f3pb3"]
@@ -74,8 +74,8 @@ offset_bottom = 361.0
 position = Vector2(578, 176)
 
 [connection signal="body_entered" from="TileMapLayer/AirBubble" to="TileMapLayer/AirBubble" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@21028" to="TileMapLayer/@Area2D@21028" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@21029" to="TileMapLayer/@Area2D@21029" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@31235" to="TileMapLayer/@Area2D@31235" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@31236" to="TileMapLayer/@Area2D@31236" method="_on_body_entered"]
 [connection signal="area_entered" from="Air" to="Air" method="_on_area_entered"]
 [connection signal="area_exited" from="Air" to="Air" method="_on_area_exited"]
 [connection signal="body_entered" from="Air" to="Air" method="_on_body_entered"]

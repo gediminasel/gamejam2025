@@ -9,6 +9,10 @@ const TileSize = 32
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):
 		GameManager.instance(self).retry()
+	if event.is_action_pressed("cheat_next_level"):
+		GameManager.instance(self).next_level()
+	if event.is_action_pressed("prev_level"):
+		GameManager.instance(self).prev_level()
 
 static func instance(obj: Node) -> LevelManager:
 	return obj.get_tree().current_scene.get_node("LevelManager") as LevelManager

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://5077tl75reb1"]
 
-[ext_resource type="PackedScene" uid="uid://1bnea7nnpcxj" path="res://LevelManager.tscn" id="1_mbnlw"]
+[ext_resource type="PackedScene" uid="uid://bc5c50q6nx525" path="res://LevelManager.tscn" id="1_mbnlw"]
 [ext_resource type="PackedScene" uid="uid://dpsxnxorj2yf8" path="res://entities/PlayerDolphin.tscn" id="1_y5yu6"]
 [ext_resource type="TileSet" uid="uid://bjhfc4cmucefk" path="res://blocks/MainTileSet.tres" id="2_angxn"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="6_j6trf"]
