@@ -3,15 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bkmgm535jwnlp" path="res://sprites/Islands.png" id="1_akk0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2gr"]
-size = Vector2(32, 8)
+size = Vector2(32, 6)
 
 [node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pg2gr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
 texture = ExtResource("1_akk0h")
 region_enabled = true
 region_rect = Rect2(160, 0, 32, 32)
