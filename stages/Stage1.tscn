@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=4 uid="uid://5077tl75reb1"]
+[gd_scene load_steps=13 format=4 uid="uid://5077tl75reb1"]
 
-[ext_resource type="PackedScene" path="res://LevelManager.tscn" id="1_mbnlw"]
+[ext_resource type="PackedScene" uid="uid://1bnea7nnpcxj" path="res://LevelManager.tscn" id="1_mbnlw"]
 [ext_resource type="PackedScene" uid="uid://dpsxnxorj2yf8" path="res://entities/PlayerDolphin.tscn" id="1_y5yu6"]
 [ext_resource type="TileSet" uid="uid://bjhfc4cmucefk" path="res://blocks/MainTileSet.tres" id="2_angxn"]
 [ext_resource type="PackedScene" uid="uid://vyuoqxeoymfu" path="res://entities/Crab.tscn" id="2_v4j2e"]
-[ext_resource type="PackedScene" path="res://entities/Jellyfish.tscn" id="5_h1rbl"]
+[ext_resource type="PackedScene" uid="uid://cxtqvpj4lvf47" path="res://entities/Jellyfish.tscn" id="5_h1rbl"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="6_j6trf"]
 [ext_resource type="Texture2D" uid="uid://do3e4eqitaxdo" path="res://sprites/BackgroundSunset.png" id="7_nmjrc"]
 [ext_resource type="Script" path="res://scripts/air.gd" id="8_0ou27"]
 [ext_resource type="PackedScene" uid="uid://vdmg10k8vbsu" path="res://ui/LevelUI.tscn" id="8_ns8td"]
 [ext_resource type="PackedScene" uid="uid://dxelevh74cr4b" path="res://entities/AirBubble.tscn" id="10_l5u1s"]
+[ext_resource type="PackedScene" uid="uid://cj6y3n50f2efm" path="res://entities/FinishRing.tscn" id="11_5rkfy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76o4n"]
 size = Vector2(1291, 222)
@@ -86,6 +87,9 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 641.0
 offset_bottom = 361.0
+
+[node name="FinishRing" parent="." instance=ExtResource("11_5rkfy")]
+position = Vector2(1209, 192)
 
 [connection signal="area_entered" from="Air" to="Air" method="_on_area_entered"]
 [connection signal="area_exited" from="Air" to="Air" method="_on_area_exited"]
