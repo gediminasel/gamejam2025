@@ -106,7 +106,7 @@ func move_to(direction: Vector2, delta: float):
 		animation.pause()
 
 func clamp_position():
-	var max_pos = manager.level_size_in_pixels()
+	var max_pos = manager.level_size_in_pixels() if manager != null else Vector2(1000, 1000)
 	position = position.clamp(Vector2.ZERO, max_pos)
 	velocity.x = max(0, velocity.x) if position.x == 0 else velocity.x
 	velocity.y = max(0, velocity.y) if position.y == 0 else velocity.y

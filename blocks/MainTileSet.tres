@@ -1,14 +1,21 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://bjhfc4cmucefk"]
+[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://bjhfc4cmucefk"]
 
 [ext_resource type="PackedScene" uid="uid://citk1p1e8ftd8" path="res://blocks/IslandWithFlower.tscn" id="1_ukiis"]
 [ext_resource type="PackedScene" uid="uid://btlpndr2q0j85" path="res://blocks/IslandWithFrog.tscn" id="2_7edgd"]
+[ext_resource type="PackedScene" uid="uid://buen7jpgbnmjr" path="res://blocks/IslandSand0.tscn" id="2_lltg4"]
+[ext_resource type="PackedScene" uid="uid://cmutcitbvqpla" path="res://blocks/IslandSand1.tscn" id="3_b7f4n"]
 [ext_resource type="PackedScene" uid="uid://d4cft82l6erdy" path="res://blocks/IslandThin.tscn" id="3_otgi2"]
 [ext_resource type="PackedScene" uid="uid://cdfp3xcmwiyco" path="res://blocks/IslandDirtBlock.tscn" id="4_1ly7a"]
+[ext_resource type="PackedScene" uid="uid://6dklliqpgeuq" path="res://blocks/IslandSand2.tscn" id="4_kfg8u"]
 [ext_resource type="PackedScene" uid="uid://dchvff00lt0ge" path="res://blocks/IslandDirtThick.tscn" id="5_nomyw"]
+[ext_resource type="PackedScene" uid="uid://btyngemy4th6w" path="res://blocks/IslandSand3.tscn" id="5_wd8ve"]
+[ext_resource type="PackedScene" uid="uid://b77laxto7moo5" path="res://blocks/IslandSand5.tscn" id="6_bnuia"]
 [ext_resource type="PackedScene" uid="uid://dsfbibbwdp2rq" path="res://blocks/IslandDirtThin.tscn" id="6_flruq"]
-[ext_resource type="PackedScene" uid="uid://cmutcitbvqpla" path="res://blocks/IslandSand.tscn" id="7_fo4gy"]
+[ext_resource type="PackedScene" uid="uid://b4mp0i5xhkqtu" path="res://blocks/IslandSand6.tscn" id="7_0ljp7"]
 [ext_resource type="PackedScene" uid="uid://cpfpqonffm48b" path="res://blocks/IslandSandPalm.tscn" id="8_tdvru"]
 [ext_resource type="PackedScene" uid="uid://ug5g55njtqmd" path="res://blocks/IslandThick.tscn" id="9_nqpp7"]
+[ext_resource type="PackedScene" uid="uid://2rjqb1oavn4i" path="res://blocks/IslandSand7.tscn" id="9_o607m"]
+[ext_resource type="PackedScene" uid="uid://d45wyxxxcxd1" path="res://blocks/IslandSand8.tscn" id="10_dtr5f"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4ykt6"]
 resource_name = "Main"
@@ -18,9 +25,16 @@ scenes/3/scene = ExtResource("3_otgi2")
 scenes/4/scene = ExtResource("4_1ly7a")
 scenes/5/scene = ExtResource("5_nomyw")
 scenes/6/scene = ExtResource("6_flruq")
-scenes/7/scene = ExtResource("7_fo4gy")
 scenes/8/scene = ExtResource("8_tdvru")
 scenes/9/scene = ExtResource("9_nqpp7")
+scenes/14/scene = ExtResource("2_lltg4")
+scenes/15/scene = ExtResource("3_b7f4n")
+scenes/16/scene = ExtResource("4_kfg8u")
+scenes/17/scene = ExtResource("5_wd8ve")
+scenes/18/scene = ExtResource("6_bnuia")
+scenes/19/scene = ExtResource("7_0ljp7")
+scenes/20/scene = ExtResource("9_o607m")
+scenes/21/scene = ExtResource("10_dtr5f")
 
 [resource]
 tile_size = Vector2i(32, 32)
