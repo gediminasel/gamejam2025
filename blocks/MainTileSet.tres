@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=36 format=3 uid="uid://bjhfc4cmucefk"]
+[gd_resource type="TileSet" load_steps=37 format=3 uid="uid://bjhfc4cmucefk"]
 
 [ext_resource type="PackedScene" uid="uid://citk1p1e8ftd8" path="res://blocks/IslandWithFlower.tscn" id="1_ukiis"]
 [ext_resource type="PackedScene" uid="uid://brqf4wowgrdov" path="res://blocks/IslandSandBlock4.tscn" id="2_7cd4o"]
@@ -34,11 +34,13 @@
 [ext_resource type="PackedScene" uid="uid://oi1yvdkjn6hw" path="res://blocks/IslandGrass5.tscn" id="27_x4bwy"]
 [ext_resource type="PackedScene" uid="uid://ci66tp8plpieh" path="res://blocks/IslandGrass6.tscn" id="28_xgc21"]
 [ext_resource type="PackedScene" uid="uid://c257mb3kpmakv" path="res://blocks/IslandGrass8.tscn" id="29_h0iko"]
+[ext_resource type="PackedScene" uid="uid://b67emb3qqexeu" path="res://entities/AirBubbleDark.tscn" id="30_ymito"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4ykt6"]
 resource_name = "Main"
 scenes/1/scene = ExtResource("1_ukiis")
 scenes/2/scene = ExtResource("2_7edgd")
+scenes/4/scene = ExtResource("30_ymito")
 scenes/5/scene = ExtResource("5_nomyw")
 scenes/6/scene = ExtResource("6_flruq")
 scenes/8/scene = ExtResource("8_tdvru")

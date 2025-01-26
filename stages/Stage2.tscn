@@ -71,9 +71,6 @@ offset_bottom = 361.0
 [node name="FinishRing" parent="." instance=ExtResource("8_yj2tj")]
 position = Vector2(578, 170)
 
-[connection signal="body_entered" from="TileMapLayer/AirBubble" to="TileMapLayer/AirBubble" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@21205" to="TileMapLayer/@Area2D@21205" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@21206" to="TileMapLayer/@Area2D@21206" method="_on_body_entered"]
 [connection signal="area_entered" from="Air" to="Air" method="_on_area_entered"]
 [connection signal="area_exited" from="Air" to="Air" method="_on_area_exited"]
 [connection signal="body_entered" from="Air" to="Air" method="_on_body_entered"]

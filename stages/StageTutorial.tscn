@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=4 uid="uid://coxkg4xyyd6sp"]
+
+[ext_resource type="PackedScene" uid="uid://bc5c50q6nx525" path="res://LevelManager.tscn" id="1_ko11u"]
+[ext_resource type="Texture2D" uid="uid://uaj570hr3ox3" path="res://sprites/BackgroundClouds.png" id="2_cgd5r"]
+[ext_resource type="TileSet" uid="uid://bjhfc4cmucefk" path="res://blocks/MainTileSet.tres" id="3_x2nlw"]
+[ext_resource type="PackedScene" uid="uid://dpsxnxorj2yf8" path="res://entities/PlayerDolphin.tscn" id="4_qf1cs"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="5_tvypq"]
+[ext_resource type="Script" path="res://scripts/air.gd" id="6_q61h3"]
+[ext_resource type="PackedScene" uid="uid://vdmg10k8vbsu" path="res://ui/LevelUI.tscn" id="7_7noe5"]
+[ext_resource type="PackedScene" uid="uid://cj6y3n50f2efm" path="res://entities/FinishRing.tscn" id="8_pn443"]
+[ext_resource type="PackedScene" uid="uid://cxtqvpj4lvf47" path="res://entities/Jellyfish.tscn" id="9_jok4p"]
+[ext_resource type="PackedScene" uid="uid://b67emb3qqexeu" path="res://entities/AirBubbleDark.tscn" id="10_c35ac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76o4n"]
+size = Vector2(648, 107)
+
+[node name="Stage1" type="Node2D"]
+texture_filter = 1
+
+[node name="LevelManager" parent="." instance=ExtResource("1_ko11u")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("2_cgd5r")
+region_rect = Rect2(0, 220, 1280, 500)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, -7)
+tile_map_data = PackedByteArray("AAAQAAQAAQAAAAAAIQAFAAQAAQAAAAAAEwAGAAUAAQAAAAAAEwAHAAYAAQAAAAAAEwAIAAcAAQAAAAAAEwAGAAQAAQAAAAAAEAAHAAUAAQAAAAAAEAAIAAYAAQAAAAAAEAAFAAgAAQAAAAAAEgAFAAkAAQAAAAAAEgAFAAoAAQAAAAAAEgAAAAsAAQAAAAAADQABAAsAAQAAAAAADQACAAsAAQAAAAAADQADAAsAAQAAAAAADQAEAAsAAQAAAAAADQAFAAsAAQAAAAAADQAGAAsAAQAAAAAADQAHAAsAAQAAAAAADQAIAAsAAQAAAAAADQAJAAsAAQAAAAAADQAKAAsAAQAAAAAADQALAAsAAQAAAAAADQAMAAsAAQAAAAAADQANAAsAAQAAAAAADQAOAAsAAQAAAAAADQAPAAsAAQAAAAAADQAQAAsAAQAAAAAADQARAAsAAQAAAAAADQASAAsAAQAAAAAADQATAAsAAQAAAAAADQACAAMAAQAAAAAAAQADAAMAAQAAAAAAAgAGAAcAAQAAAAAAFAAHAAcAAQAAAAAAEAAHAAgAAQAAAAAAEwAIAAgAAQAAAAAAFAAJAAgAAQAAAAAAFAAKAAgAAQAAAAAAFAAJAAcAAQAAAAAADwAKAAcAAQAAAAAADwALAAcAAQAAAAAADwAMAAcAAQAAAAAADwANAAcAAQAAAAAADwAFAAMAAQAAAAAAEQAFAAIAAQAAAAAAEQAKAAUAAQAAAAAADwALAAUAAQAAAAAADwAMAAUAAQAAAAAADwANAAUAAQAAAAAADwAOAAUAAQAAAAAADwAPAAUAAQAAAAAADwARAAUAAQAAAAAADwAQAAUAAQAAAAAADwASAAUAAQAAAAAADwATAAUAAQAAAAAADwALAAQAAQAAAAAAHwAGAAMAAQAAAAAABgAHAAMAAQAAAAAABgAIAAMAAQAAAAAABgAJAAMAAQAAAAAABgAKAAMAAQAAAAAABgAFAAcAAQAAAAAADgAOAAcAAQAAAAAADwAPAAcAAQAAAAAADwAPAAYAAQAAAAAAIQA=")
+tile_set = ExtResource("3_x2nlw")
+
+[node name="Player" parent="." instance=ExtResource("4_qf1cs")]
+position = Vector2(45, 163)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(321, 181)
+process_callback = 0
+script = ExtResource("5_tvypq")
+
+[node name="Air" type="Area2D" parent="." groups=["Air"]]
+script = ExtResource("6_q61h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air"]
+position = Vector2(319, 46.5)
+shape = SubResource("RectangleShape2D_76o4n")
+
+[node name="CornerMarker" type="Marker2D" parent="."]
+position = Vector2(640, 360)
+gizmo_extents = 2824.5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LevelUi" parent="UI" instance=ExtResource("7_7noe5")]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 641.0
+offset_bottom = 361.0
+
+[node name="FinishRing" parent="." instance=ExtResource("8_pn443")]
+position = Vector2(601, 58)
+
+[node name="Jellyfish" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(498, 248)
+
+[node name="Jellyfish2" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(494, 274)
+
+[node name="Jellyfish3" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(509, 294)
+
+[node name="Jellyfish4" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(494, 309)
+
+[node name="Jellyfish5" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(511, 328)
+
+[node name="Jellyfish6" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(473, 249)
+
+[node name="Jellyfish7" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(461, 277)
+
+[node name="AirBubble" parent="." instance=ExtResource("10_c35ac")]
+position = Vector2(333, 215)
+
+[node name="AirBubble2" parent="." instance=ExtResource("10_c35ac")]
+position = Vector2(466, 217)
+
+[node name="AirBubble3" parent="." instance=ExtResource("10_c35ac")]
+position = Vector2(466, 186)
+
+[connection signal="area_entered" from="Air" to="Air" method="_on_area_entered"]
+[connection signal="area_exited" from="Air" to="Air" method="_on_area_exited"]
+[connection signal="body_entered" from="Air" to="Air" method="_on_body_entered"]
+[connection signal="body_exited" from="Air" to="Air" method="_on_body_exited"]

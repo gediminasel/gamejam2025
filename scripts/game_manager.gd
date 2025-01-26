@@ -5,6 +5,7 @@ static var Me = preload("res://GameManager.tscn")
 static var Start = preload("res://ui/Start.tscn")
 static var TheEnd = preload("res://stages/TheEnd.tscn")
 static var Levels: Array[Resource] = [
+	preload("res://stages/StageTutorial.tscn"),
 	preload("res://stages/Stage1.tscn"),
 	preload("res://stages/Stage2.tscn"),
 ]
