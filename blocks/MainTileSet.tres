@@ -1,11 +1,10 @@
-[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://bjhfc4cmucefk"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://bjhfc4cmucefk"]
 
 [ext_resource type="PackedScene" uid="uid://citk1p1e8ftd8" path="res://blocks/IslandWithFlower.tscn" id="1_ukiis"]
 [ext_resource type="PackedScene" uid="uid://btlpndr2q0j85" path="res://blocks/IslandWithFrog.tscn" id="2_7edgd"]
 [ext_resource type="PackedScene" uid="uid://buen7jpgbnmjr" path="res://blocks/IslandSand0.tscn" id="2_lltg4"]
 [ext_resource type="PackedScene" uid="uid://cmutcitbvqpla" path="res://blocks/IslandSand1.tscn" id="3_b7f4n"]
 [ext_resource type="PackedScene" uid="uid://d4cft82l6erdy" path="res://blocks/IslandThin.tscn" id="3_otgi2"]
-[ext_resource type="PackedScene" uid="uid://cdfp3xcmwiyco" path="res://blocks/IslandDirtBlock.tscn" id="4_1ly7a"]
 [ext_resource type="PackedScene" uid="uid://6dklliqpgeuq" path="res://blocks/IslandSand2.tscn" id="4_kfg8u"]
 [ext_resource type="PackedScene" uid="uid://dchvff00lt0ge" path="res://blocks/IslandDirtThick.tscn" id="5_nomyw"]
 [ext_resource type="PackedScene" uid="uid://btyngemy4th6w" path="res://blocks/IslandSand3.tscn" id="5_wd8ve"]
@@ -16,13 +15,24 @@
 [ext_resource type="PackedScene" uid="uid://ug5g55njtqmd" path="res://blocks/IslandThick.tscn" id="9_nqpp7"]
 [ext_resource type="PackedScene" uid="uid://2rjqb1oavn4i" path="res://blocks/IslandSand7.tscn" id="9_o607m"]
 [ext_resource type="PackedScene" uid="uid://d45wyxxxcxd1" path="res://blocks/IslandSand8.tscn" id="10_dtr5f"]
+[ext_resource type="PackedScene" uid="uid://csroap2xfnm6w" path="res://blocks/IslandDirt0.tscn" id="11_2bbm0"]
+[ext_resource type="PackedScene" uid="uid://bxumdow2fkbom" path="res://blocks/IslandDirt1.tscn" id="12_kuarj"]
+[ext_resource type="PackedScene" uid="uid://dc21e7wrask1" path="res://blocks/IslandDirt2.tscn" id="13_vy8do"]
+[ext_resource type="PackedScene" uid="uid://dt7jj74y2pbt1" path="res://blocks/IslandDirt3.tscn" id="14_symwx"]
+[ext_resource type="PackedScene" uid="uid://cdfp3xcmwiyco" path="res://blocks/IslandDirt4.tscn" id="15_3ehox"]
+[ext_resource type="PackedScene" uid="uid://cqp3aipkrnb04" path="res://blocks/IslandDirt5.tscn" id="16_4ej0x"]
+[ext_resource type="PackedScene" uid="uid://ko8n2om8hqxd" path="res://blocks/IslandDirt6.tscn" id="17_l8jol"]
+[ext_resource type="PackedScene" uid="uid://dspl12hq5hdo8" path="res://blocks/IslandDirt7.tscn" id="18_gt41g"]
+[ext_resource type="PackedScene" uid="uid://c7a274l1hl0jj" path="res://blocks/IslandDirt8.tscn" id="20_5v1fw"]
+[ext_resource type="PackedScene" uid="uid://vyuoqxeoymfu" path="res://entities/Crab.tscn" id="21_pfhtc"]
+[ext_resource type="PackedScene" uid="uid://dxelevh74cr4b" path="res://entities/AirBubble.tscn" id="22_8p5tj"]
+[ext_resource type="PackedScene" uid="uid://cxtqvpj4lvf47" path="res://entities/Jellyfish.tscn" id="23_tnlom"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4ykt6"]
 resource_name = "Main"
 scenes/1/scene = ExtResource("1_ukiis")
 scenes/2/scene = ExtResource("2_7edgd")
 scenes/3/scene = ExtResource("3_otgi2")
-scenes/4/scene = ExtResource("4_1ly7a")
 scenes/5/scene = ExtResource("5_nomyw")
 scenes/6/scene = ExtResource("6_flruq")
 scenes/8/scene = ExtResource("8_tdvru")
@@ -35,6 +45,18 @@ scenes/18/scene = ExtResource("6_bnuia")
 scenes/19/scene = ExtResource("7_0ljp7")
 scenes/20/scene = ExtResource("9_o607m")
 scenes/21/scene = ExtResource("10_dtr5f")
+scenes/22/scene = ExtResource("11_2bbm0")
+scenes/23/scene = ExtResource("12_kuarj")
+scenes/24/scene = ExtResource("13_vy8do")
+scenes/25/scene = ExtResource("14_symwx")
+scenes/26/scene = ExtResource("15_3ehox")
+scenes/27/scene = ExtResource("16_4ej0x")
+scenes/28/scene = ExtResource("17_l8jol")
+scenes/29/scene = ExtResource("18_gt41g")
+scenes/30/scene = ExtResource("20_5v1fw")
+scenes/31/scene = ExtResource("21_pfhtc")
+scenes/32/scene = ExtResource("22_8p5tj")
+scenes/33/scene = ExtResource("23_tnlom")
 
 [resource]
 tile_size = Vector2i(32, 32)

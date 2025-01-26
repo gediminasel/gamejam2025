@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc21e7wrask1"]
+
+[ext_resource type="Texture2D" uid="uid://brhhi4fyrsv00" path="res://sprites/DirtBlocks.png" id="1_dkb6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kc0ej"]
+radius = 22.0
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 16)
+shape = SubResource("CircleShape2D_kc0ej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dkb6g")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)

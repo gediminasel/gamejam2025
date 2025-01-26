@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const Speed = 100.0
-const Distance = 80.0
+const Distance = 100.0
 
 @onready var normal_sprite: Sprite2D = $Sprites/Normal
 @onready var angry_sprite: Sprite2D = $Sprites/Angry
@@ -21,8 +21,7 @@ func _physics_process(delta):
 			move_and_slide()
 		return
 
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	velocity += get_gravity() * delta
 	
 	var player = manager.player
 	var direction = player.position - position if player and not player.is_dead else Vector2(1000000, 1000000)
