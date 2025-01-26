@@ -15,6 +15,7 @@ const AirBreathSpeed = 2
 
 const EnemiesGroup = "Enemies"
 
+static var SplashScene := preload("res://entities/SplashParticles.tscn")
 static var BubbleScene := preload("res://entities/BubbleRing.tscn")
 const BubbleShootOffset = Vector2(15, 0)  # offset to mouth
 const BubbleAdditionalSpeed = 50
@@ -148,6 +149,12 @@ func on_air_enter():
 			velocity = Vector2(0, -min_vel)
 		else:
 			velocity *= min_vel / velocity.length()
+	else:
+		var splash = SplashScene.instantiate() as SplashParticles
+		splash.position = position
+		splash.initial_velocity_min = velocity.length()
+		splash.initial_velocity_max = splash.initial_velocity_min + 50
+		get_tree().current_scene.add_child(splash)
 
 func on_air_exit():
 	velocity = velocity.limit_length(0.5 * velocity.length())
