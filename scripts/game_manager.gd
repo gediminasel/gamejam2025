@@ -36,6 +36,6 @@ func retry():
 func next_level():
 	level += 1
 	if level < len(Levels):
-		get_tree().change_scene_to_packed(Levels[level])
+		get_tree().call_deferred("change_scene_to_packed", Levels[level])
 	else:
-		get_tree().change_scene_to_packed(TheEnd)
+		get_tree().call_deferred("change_scene_to_packed", TheEnd)

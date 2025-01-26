@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://brqf4wowgrdov"]
+
+[ext_resource type="Texture2D" uid="uid://b0si7eh8fbhc6" path="res://sprites/SandBlock.png" id="1_3nxef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aijh"]
+size = Vector2(32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1aijh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3nxef")
+region_rect = Rect2(0, 0, 32, 32)
