@@ -4,3 +4,8 @@
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_wm152")
+
+[node name="FinishTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="FinishTimer" to="." method="_on_finish_timer_timeout"]

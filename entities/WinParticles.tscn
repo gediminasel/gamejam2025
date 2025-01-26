@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3v7yejv0u3fb"]
+
+[sub_resource type="Curve" id="Curve_dxfyl"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_myw4m"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="WinParticles" type="CPUParticles2D"]
+position = Vector2(28, 12)
+amount = 30
+explosiveness = 0.87
+randomness = 0.1
+lifetime_randomness = 0.2
+emission_shape = 4
+emission_points = PackedVector2Array()
+emission_colors = PackedColorArray()
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 100.0
+angular_velocity_min = -45.0
+angular_velocity_max = 45.0
+angle_min = -96.8
+angle_max = 96.9
+angle_curve = SubResource("Curve_dxfyl")
+scale_amount_max = 3.0
+color = Color(1, 0, 0, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_myw4m")

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bduu0wa3ds4h7"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 6.0
+offset_right = 226.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.916594, 0.00959419, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "Don't run out of air"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 413.0
+offset_top = 1.0
+offset_right = 605.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.917647, 0.00784314, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 12
+text = "Jump through the ring to
+go to the next level"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 263.0
+offset_top = 112.0
+offset_right = 383.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.917647, 0.00784314, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 12
+text = "Crabs will follow you,
+be careful!
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 264.0
+offset_right = 172.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0.917647, 0.00784314, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 12
+text = "Avoid jellyfish"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 299.0
+offset_right = 480.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(0.917647, 0.00784314, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 12
+text = "Shoot enemies with bubbles
+by pressing [Space]"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 341.0
+offset_top = 215.0
+offset_right = 449.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0.917647, 0.00784314, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 12
+text = "Get some extra air"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 74.0
+offset_right = 372.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.917647, 0.00784314, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 12
+text = "Press [R] to retry if you get stuck"
+horizontal_alignment = 1

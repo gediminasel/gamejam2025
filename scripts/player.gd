@@ -26,6 +26,7 @@ const BubbleAdditionalSpeed = 50
 @onready var animation: AnimatedSprite2D = $Sprites/AnimatedDolphin
 @onready var in_air = $InAir as InAir
 var is_dead = false
+var is_win = false
 
 var air = 10
 var on_ground = false
@@ -42,6 +43,8 @@ func _physics_process(delta):
 		return
 	
 	var input = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	if is_win:
+		input = Vector2.ZERO
 	if in_air.in_air:
 		if on_ground:
 			input = Vector2(0, 0)
@@ -79,7 +82,6 @@ func _process_dead_animation(delta: float) -> void:
 	animation.frame = 0
 	if position.y < -50:
 		velocity = Vector2.ZERO
-		manager.on_finish(false)
 		queue_free()
 		return
 	sprite.scale.y = -1
@@ -118,10 +120,16 @@ func clamp_position():
 	velocity.y = min(0, velocity.y) if position.y == max_pos.y else velocity.y
 
 func die():
-	if is_dead:
+	if is_dead or is_win:
 		return
 	is_dead = true
 	$CollisionShape2D.disabled = true
+	manager.on_finish(false)
+
+func win():
+	if is_dead or is_win:
+		return
+	is_win = true
 
 func shoot():
 	if air < 2 * AirToShoot:

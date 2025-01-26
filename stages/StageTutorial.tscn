@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://coxkg4xyyd6sp"]
+[gd_scene load_steps=13 format=4 uid="uid://coxkg4xyyd6sp"]
 
 [ext_resource type="PackedScene" uid="uid://bc5c50q6nx525" path="res://LevelManager.tscn" id="1_ko11u"]
 [ext_resource type="Texture2D" uid="uid://uaj570hr3ox3" path="res://sprites/BackgroundClouds.png" id="2_cgd5r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_tvypq"]
 [ext_resource type="Script" path="res://scripts/air.gd" id="6_q61h3"]
 [ext_resource type="PackedScene" uid="uid://vdmg10k8vbsu" path="res://ui/LevelUI.tscn" id="7_7noe5"]
+[ext_resource type="PackedScene" uid="uid://bduu0wa3ds4h7" path="res://ui/Tutorial.tscn" id="8_1u428"]
 [ext_resource type="PackedScene" uid="uid://cj6y3n50f2efm" path="res://entities/FinishRing.tscn" id="8_pn443"]
 [ext_resource type="PackedScene" uid="uid://cxtqvpj4lvf47" path="res://entities/Jellyfish.tscn" id="9_jok4p"]
 [ext_resource type="PackedScene" uid="uid://b67emb3qqexeu" path="res://entities/AirBubbleDark.tscn" id="10_c35ac"]
@@ -56,6 +57,8 @@ offset_top = 1.0
 offset_right = 641.0
 offset_bottom = 361.0
 
+[node name="Tutorial" parent="UI" instance=ExtResource("8_1u428")]
+
 [node name="FinishRing" parent="." instance=ExtResource("8_pn443")]
 position = Vector2(601, 58)
 
@@ -76,6 +79,9 @@ position = Vector2(511, 328)
 
 [node name="Jellyfish6" parent="." instance=ExtResource("9_jok4p")]
 position = Vector2(473, 249)
+
+[node name="Jellyfish8" parent="." instance=ExtResource("9_jok4p")]
+position = Vector2(103, 240)
 
 [node name="Jellyfish7" parent="." instance=ExtResource("9_jok4p")]
 position = Vector2(461, 277)
