@@ -71,7 +71,7 @@ offset_right = 641.0
 offset_bottom = 361.0
 
 [node name="FinishRing" parent="." instance=ExtResource("11_5rkfy")]
-position = Vector2(1209, 192)
+position = Vector2(1209, 177)
 
 [connection signal="area_entered" from="Air" to="Air" method="_on_area_entered"]
 [connection signal="area_exited" from="Air" to="Air" method="_on_area_exited"]

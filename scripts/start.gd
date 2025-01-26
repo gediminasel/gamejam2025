@@ -1,7 +1,7 @@
 extends Control
 
 func _input(event: InputEvent) -> void:
-	if event.is_action("ui_accept"):
+	if event.is_action_pressed("ui_accept"):
 		start_game()
 
 func _on_button_pressed() -> void:
