@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4cft82l6erdy"]
 
-[ext_resource type="Texture2D" uid="uid://bkmgm535jwnlp" path="res://sprites/Islands.png" id="1_100w8"]
+[ext_resource type="Texture2D" uid="uid://cu4jtyvvj1bd4" path="res://sprites/GrassThin.png" id="1_ajnlr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aijh"]
-size = Vector2(32, 8)
+size = Vector2(32, 5)
 
 [node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1aijh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_100w8")
+texture = ExtResource("1_ajnlr")
 region_enabled = true
-region_rect = Rect2(96, 0, 32, 32)
+region_rect = Rect2(32, 0, 32, 32)

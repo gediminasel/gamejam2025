@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvhu8v0hr0p3d"]
+
+[ext_resource type="Texture2D" uid="uid://cu4jtyvvj1bd4" path="res://sprites/GrassThin.png" id="1_3tngj"]
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3tngj")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, -2, 12, -2, -2, 11, -2, 16, 3, 16, 16, 3)

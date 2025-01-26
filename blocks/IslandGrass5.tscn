@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://oi1yvdkjn6hw"]
+
+[ext_resource type="Texture2D" uid="uid://cu4jtyvvj1bd4" path="res://sprites/GrassThin.png" id="1_cdncm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aijh"]
+size = Vector2(5, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["Ground"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_1aijh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cdncm")
+region_enabled = true
+region_rect = Rect2(64, 32, 32, 32)
